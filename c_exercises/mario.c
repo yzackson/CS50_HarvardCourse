@@ -1,13 +1,17 @@
 #include <stdio.h>
-#include <cs50.h>
 
 
 int main(void) {
     int nb;
+
     do{
-        nb = get_int("Tell me a number: ");
+        printf("Insert a number between 1 and 8: ");
+        scanf("%d", &nb);
+        printf("\n\n");
     } while (nb < 1 || nb > 8);
+
     int qtd_spaces = nb-1;
+
     for(int i = 1; i <= nb; i++){
         for(int n = qtd_spaces; n > 0; n--){
             printf(" ");
@@ -18,4 +22,6 @@ int main(void) {
         printf("\n");
         qtd_spaces--;
     }
+
+    return 0;
 }

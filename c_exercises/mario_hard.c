@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+void printFullBlock(int nb);
 
 int main(void) {
     int nb;
@@ -10,6 +11,14 @@ int main(void) {
         printf("\n\n");
     } while (nb < 1 || nb > 8);
 
+    printFullBlock(nb);
+
+    return 0;
+}
+
+
+
+void printFullBlock(int nb) {
     int qtd_spaces = nb-1;
 
     for(int i = 1; i <= nb; i++){
@@ -19,9 +28,14 @@ int main(void) {
         for(int m = i; m > 0; m--){
             printf("#");
         }
+        printf(" ");
+        for(int m = i; m > 0; m--){
+            printf("#");
+        }
+        for(int n = qtd_spaces; n > 0; n--){
+            printf(" ");
+        }
         printf("\n");
         qtd_spaces--;
     }
-
-    return 0;
 }
